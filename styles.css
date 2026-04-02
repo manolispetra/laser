@@ -1376,8 +1376,201 @@ body {
 }
 
 /* ========================================
-   ENHANCED FEATURES - V2.5
+   ENHANCED FEATURES - V2.6
+   CLEANER, MORE DIRECT
    ======================================== */
+
+/* Modern Clean Fonts */
+body {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.logo-text, .hero-title, .section-title {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 900 !important;
+}
+
+.wallet-address-short, #paymentAddress, code, pre {
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Header Navigation */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo-section {
+    flex-shrink: 0;
+}
+
+.header-nav {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-green), var(--neon-pink));
+    transition: width 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--neon-green);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.wallet-section {
+    flex-shrink: 0;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* OpNet Logo Transparent */
+.opnet-badge {
+    height: 30px;
+    margin-left: 15px;
+    opacity: 0.85;
+    transition: all 0.3s;
+    mix-blend-mode: screen; /* Helps with transparency */
+}
+
+/* Cleaner Logo Layout */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-text {
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+/* Remove old tagline */
+.tagline {
+    display: none;
+}
+
+/* Cleaner Hero */
+.hero-title {
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-tagline {
+    font-size: 64px;
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+/* Compact Button */
+.btn-connect {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    gap: 8px;
+}
+
+.btn-connect span {
+    font-size: 14px;
+}
+
+/* Cleaner Sections */
+.section-title {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 40px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+/* Compact Stats */
+.hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.stat {
+    padding: 25px 20px;
+}
+
+.stat-value {
+    font-size: 36px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 968px) {
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .header-nav {
+        width: 100%;
+        justify-content: space-around;
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-nav {
+        gap: 10px;
+    }
+    
+    .nav-link {
+        font-size: 13px;
+        padding: 5px;
+    }
+    
+    .logo-text {
+        font-size: 28px;
+    }
+    
+    .opnet-badge {
+        height: 22px;
+        margin-left: 10px;
+    }
+}
 
 /* Laser Eye Image Logo */
 .laser-eye-image {
@@ -1513,6 +1706,60 @@ body, .story-block p, .manifesto-text {
     50% {
         filter: drop-shadow(0 0 40px var(--neon-pink));
     }
+}
+
+/* Story Section - Cleaner */
+.story {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vision-card {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 255, 157, 0.2);
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.vision-card:hover {
+    border-color: var(--neon-green);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 255, 157, 0.2);
+}
+
+.vision-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.vision-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--neon-green);
+    margin-bottom: 15px;
+}
+
+.vision-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Remove old story styles */
+.story-content,
+.story-block,
+.manifesto {
+    display: none;
 }
 
 /* Meme Generator */

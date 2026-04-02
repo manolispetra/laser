@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -26,7 +26,7 @@
 
     <!-- Header -->
     <header class="header">
-        <div class="container">
+        <div class="container header-container">
             <div class="logo-section">
                 <div class="logo">
                     <div class="laser-eye-image">
@@ -34,45 +34,53 @@
                         <div class="laser-glow-effect"></div>
                     </div>
                     <h1 class="logo-text">LASER</h1>
-                    <img src="opnet-logo.png" alt="OpNet" class="opnet-badge">
+                    <img src="opnet-logo-transparent.png" alt="OpNet" class="opnet-badge">
                 </div>
-                <p class="tagline">LASER-FOCUSED ON 100K 🎯</p>
             </div>
             
-            <!-- Wallet Not Connected -->
-            <div id="walletDisconnected">
-                <button id="connectWallet" class="btn-connect">
-                    <span class="wallet-icon">👁️‍🗨️</span>
-                    <span class="wallet-text">CONNECT WALLET</span>
-                </button>
-            </div>
+            <!-- Navigation -->
+            <nav class="header-nav">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#presale" class="nav-link">Presale</a>
+                <a href="#meme" class="nav-link">Meme</a>
+                <a href="#referral" class="nav-link">Refer</a>
+            </nav>
             
-            <!-- Wallet Connected -->
-            <div id="walletConnected" style="display: none;">
-                <div class="wallet-info-box">
-                    <div class="wallet-balance">
-                        <div class="balance-sats" id="balanceSats">0 sats</div>
-                        <div class="balance-usd" id="balanceUsd">$0.00</div>
-                    </div>
-                    <div class="wallet-address-short" id="walletAddressShort">bc1p...</div>
-                    <button id="disconnectWallet" class="btn-disconnect" title="Disconnect">
-                        <i class="fas fa-sign-out-alt"></i>
+            <!-- Wallet -->
+            <div class="wallet-section">
+                <div id="walletDisconnected">
+                    <button id="connectWallet" class="btn-connect">
+                        <i class="fas fa-wallet"></i>
+                        <span>CONNECT</span>
                     </button>
+                </div>
+                
+                <div id="walletConnected" style="display: none;">
+                    <div class="wallet-info-box">
+                        <div class="wallet-balance">
+                            <div class="balance-sats" id="balanceSats">0 sats</div>
+                            <div class="balance-usd" id="balanceUsd">$0.00</div>
+                        </div>
+                        <div class="wallet-address-short" id="walletAddressShort">bc1p...</div>
+                        <button id="disconnectWallet" class="btn-disconnect" title="Disconnect">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="glitch-wrapper">
-                    <h2 class="hero-title glitch" data-text="THE VISION IS CLEAR">THE VISION IS CLEAR</h2>
+                    <h2 class="hero-title glitch" data-text="LASER-FOCUSED ON 100K">LASER-FOCUSED ON 100K</h2>
+                    <p class="hero-tagline">👁️‍🗨️⚡</p>
                 </div>
                 <p class="hero-subtitle">
-                    <span class="highlight">Bitcoin L1 DeFi</span> just got its eyes on the prize. 
-                    No bridges. No bullshit. Pure <span class="highlight">OP20 laser focus</span>.
+                    First OP20 meme token with vision. Bitcoin L1. No bridges. Pure laser focus.
                 </p>
                 
                 <div class="hero-stats">
@@ -144,54 +152,33 @@
         <div class="container">
             <h2 class="section-title">THE VISION 👁️</h2>
             
-            <div class="story-content">
-                <div class="story-block">
-                    <h3 class="story-title">What the fuck is LASER?</h3>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <div class="vision-icon">🎯</div>
+                    <h3>What is LASER?</h3>
                     <p>
-                        Remember when every Bitcoin maxi got <strong>laser eyes</strong> back in 2021? 
-                        That wasn't just a meme—it was a <em>movement</em>. A promise. A vision that BTC would hit 100K.
-                    </p>
-                    <p>
-                        Fast forward to 2026: OpNet just dropped <strong>native smart contracts on Bitcoin L1</strong>. 
-                        No wrapped tokens. No sidechains. No fucking around. Just pure, trustless DeFi on the king of crypto.
-                    </p>
-                    <p>
-                        <strong>LASER</strong> is the first OP20 token built for the believers who never blinked. 
-                        We're not here for 10x. We're here for <strong class="glow-text">100K and beyond</strong>.
+                        First OP20 meme token built for believers. Native Bitcoin L1 DeFi via OpNet. 
+                        No bridges, no wrapped tokens. Pure laser focus on 100K.
                     </p>
                 </div>
 
-                <div class="story-block">
-                    <h3 class="story-title">The SlowFi Philosophy ⏱️</h3>
+                <div class="vision-card">
+                    <div class="vision-icon">⏱️</div>
+                    <h3>SlowFi Philosophy</h3>
                     <p>
-                        While degen chains chase 1-second blocks, we embrace Bitcoin's <strong>10-minute blocks</strong>. 
-                        Why? Because <em>real vision doesn't need speed</em>—it needs <strong>conviction</strong>.
-                    </p>
-                    <p>
-                        LASER is built on OpNet's "SlowFi" architecture. Liquidity stays locked. 
-                        Paper hands get filtered. Diamond hands accumulate. This isn't a casino—it's a <strong>revolution</strong>.
+                        Bitcoin's 10-minute blocks = feature, not bug. Liquidity stays locked. 
+                        Paper hands filtered. Diamond hands accumulate.
                     </p>
                 </div>
 
-                <div class="story-block">
-                    <h3 class="story-title">Why You're Already Late (But Still Early) 🚀</h3>
+                <div class="vision-card">
+                    <div class="vision-icon">🚀</div>
+                    <h3>Why Now?</h3>
                     <p>
-                        733 Bitcoin OGs already locked their allocation. The presale is over 50% sold. 
-                        Every sat you delay is a sat you'll regret when LASER hits MotoSwap.
-                    </p>
-                    <p class="fomo-text">
-                        The question isn't "Will LASER pump?"<br>
-                        The question is: <strong>"Can you afford to miss the most memed OP20 token?"</strong>
+                        733 Bitcoin OGs already in. Presale 52% sold. 
+                        Every sat you delay is a sat you'll regret.
                     </p>
                 </div>
-            </div>
-
-            <div class="manifesto">
-                <div class="manifesto-icon">⚡👁️⚡</div>
-                <h3 class="manifesto-title">"We don't chase pumps. We lock onto targets."</h3>
-                <p class="manifesto-text">
-                    — Every LASER holder, probably
-                </p>
             </div>
         </div>
     </section>
@@ -412,7 +399,7 @@
     </section>
 
     <!-- Laser Eyes Meme Generator -->
-    <section class="meme-generator">
+    <section class="meme-generator" id="meme">
         <div class="container">
             <h2 class="section-title">ACTIVATE YOUR LASER EYES 👁️‍🗨️</h2>
             <p class="section-subtitle">Create viral memes and spread the vision</p>
@@ -462,7 +449,7 @@
     </section>
 
     <!-- Referral Program -->
-    <section class="referral-program">
+    <section class="referral-program" id="referral">
         <div class="container">
             <h2 class="section-title">REFERRAL PROGRAM 🚀</h2>
             <p class="section-subtitle">Invite 3 friends = +5% extra LASER</p>
