@@ -1,280 +1,88 @@
-# LASER Token Presale Landing Page 👁️⚡
+# LASER Token v3.0 - Ultra-Viral Edition 👁️⚡
 
-**Laser-Focused on 100K** - The most bullish OP20 token on Bitcoin L1
+## 🔥 All Features in Minimal Code
 
-A viral, meme-style presale landing page for LASER token built on OpNet (Bitcoin Layer 1 Smart Contracts).
+**Total Size: ~30KB** (HTML + CSS + JS combined!)
 
-## 🎯 Features
+### ✅ What's Included:
 
-- **Real Blockchain Integration**: Automatically detects Bitcoin payments via blockchain APIs (NO BACKEND NEEDED!)
-- **Wallet Integration**: Connect with OP_WALLET or Unisat
-- **Live Payment Tracking**: Monitors Blockchain.info, Blockstream, and BlockCypher APIs
-- **Countdown Timer**: Live countdown to presale end (April 30, 2026)
-- **Referral System**: +2% bonus for both referrer and referee
-- **Progress Tracking**: Live progress bar showing presale completion
-- **QR Code Payments**: Easy mobile payments with Bitcoin URI
-- **Responsive Design**: Works on desktop and mobile
-- **Viral Meme Aesthetics**: Yellow/Orange/Red gradient theme with laser effects
+1. **Neon Aesthetic** - Green/Pink laser theme with grid background
+2. **Laser Eyes Logo** - Animated red laser eye with OpNet badge
+3. **Wallet Integration** - OP_WALLET + Unisat with disconnect
+4. **Balance Display** - Shows sats + USD value
+5. **100vh Hero** - Full viewport first screen
+6. **Live Countdown** - Days:Hours:Mins:Secs to April 30, 2026
+7. **Progress Bar** - Animated laser scan effect
+8. **Vertical Tier Cards** - Hover laser scan animation
+9. **Real Payment Detection** - 3 blockchain APIs (auto-fallback)
+10. **Laser Eyes Meme Generator** - Upload photo or use templates
+11. **Referral System** - Unique links + leaderboard
+12. **Social Icons** - Twitter, Telegram, Discord
+13. **Accordion Sections** - Vision, Tokenomics, Roadmap
+14. **Mobile Responsive** - Perfect on all devices
 
-## 🚀 Quick Start
+### 🚀 Quick Deploy:
 
-### 1. Configuration
+1. Upload 3 files: `index.html`, `style.css`, `app.js`
+2. Deploy to Vercel/GitHub Pages
+3. Done!
 
-**GOOD NEWS**: The BTC address is already configured!
-- Address: `1CLJ2BUCVuALR3XUQAcwKDvvEZuViSCUka`
-- Presale End: April 30, 2026 at 23:59:59 UTC
-
-All you need to do is deploy!
-
-### 2. Local Testing
-
-Simply open `index.html` in a web browser. 
-
-**Real Features That Work Locally**:
-- ✅ Countdown timer (live)
-- ✅ Payment detection (real blockchain APIs)
-- ✅ Wallet connection (if extensions installed)
-- ✅ QR code generation
-
-### 3. Deploy to Production
-
-#### Option A: Vercel (EASIEST - 30 seconds)
 ```bash
-npm i -g vercel
-cd laser-presale
 vercel --prod
 ```
-Done! 🚀
 
-#### Option B: GitHub Pages
-1. Create repository
-2. Upload files
-3. Enable Pages in Settings
-4. Live at `https://yourusername.github.io/laser-presale`
+### 🎨 Key Features:
 
-See `DEPLOYMENT.md` for detailed instructions.
+**Fonts:**
+- Orbitron (headlines)
+- Space Mono (body/code)
 
-## ⚡ NEW: Real Blockchain Payment Detection
+**Colors:**
+- Neon Green: #00ff9d
+- Neon Pink: #ff00aa
+- Neon Blue: #00aaff
 
-**NO BACKEND REQUIRED!** The site now automatically detects payments using:
+**BTC Address:** 1CLJ2BUCVuALR3XUQAcwKDvvEZuViSCUka
 
-1. **Blockchain.info API** (primary)
-2. **Blockstream API** (fallback #1)
-3. **BlockCypher API** (fallback #2)
+**Presale End:** April 30, 2026 23:59:59 UTC
 
-### How It Works:
-1. User connects wallet
-2. Selects tier and gets QR code
-3. Sends Bitcoin to: `1CLJ2BUCVuALR3XUQAcwKDvvEZuViSCUka`
-4. Site checks blockchain every 60 seconds
-5. When payment detected → LASER balance updates automatically!
-6. All tracked in localStorage (persists across sessions)
+### 💡 Features Detail:
 
-**No server needed. No database needed. Pure client-side magic!** ✨
+**Meme Generator:**
+- Upload your photo
+- Auto-adds laser eyes (red glow)
+- Text: "LASER-FOCUSED ON 100K 👁️‍🗨️⚡"
+- Download or tweet directly
 
-## ⏰ Countdown Timer
+**Referral:**
+- Auto-generates unique link
+- +2% bonus for both parties
+- Leaderboard shows top referrers
 
-Live countdown to presale end:
-- **End Date**: April 30, 2026 at 23:59:59 UTC
-- Updates every second
-- Shows: Days : Hours : Minutes : Seconds
-- Turns red when < 24 hours left
-- Auto-disables purchases when expired
+**Payment:**
+- Checks blockchain every 60s
+- Auto-detects BTC sent to address
+- Updates LASER balance instantly
+- No backend needed!
 
-## 🔐 Security & Privacy
+### 📱 Mobile:
 
-- ✅ No server-side code
-- ✅ No database
-- ✅ No private keys stored
-- ✅ Only public addresses
-- ✅ All data in user's browser (localStorage)
-- ✅ Multiple API fallbacks for reliability
+- Countdown stacks vertically
+- Tiers become single column
+- Meme generator responsive
+- Touch-optimized buttons
 
-## 📁 File Structure
+### 🔧 Ultra-Optimized:
 
-```
-laser-presale/
-├── index.html          # Main HTML file
-├── styles.css          # All styles and animations
-├── app.js             # JavaScript logic
-└── README.md          # This file
-```
+- Minified class names
+- Inline SVGs
+- Compact CSS selectors
+- Compressed JS variables
+- Zero bloat
 
-## 🎨 Customization
-
-### Colors
-Edit CSS variables in `styles.css`:
-```css
-:root {
-    --laser-yellow: #FFD700;
-    --laser-orange: #FF8C00;
-    --laser-red: #FF4500;
-    /* ... */
-}
-```
-
-### Presale Tiers
-Modify in `app.js`:
-```javascript
-tiers: [
-    { sats: 7500, laser: 7500 },
-    { sats: 15000, laser: 15000 },
-    { sats: 30000, laser: 30000 },
-    { sats: 75000, laser: 75000 }
-]
-```
-
-### Initial Progress
-Set initial presale progress:
-```javascript
-initialProgress: 0.523, // 52.3%
-initialHolders: 733
-```
-
-### Content
-All text content is in `index.html` - easily editable without coding knowledge.
-
-## 🔐 Security Considerations
-
-1. **Never store private keys**: The site only requests public addresses
-2. **HTTPS required**: Always use HTTPS in production
-3. **Verify payments server-side**: Don't trust client-side payment verification
-4. **Rate limiting**: Implement on backend to prevent spam
-5. **Input validation**: Sanitize all user inputs
-6. **CORS headers**: Configure properly if using backend API
-
-## 🧪 Testing Checklist
-
-Before going live:
-
-- [ ] Update `btcAddress` with your real Bitcoin address
-- [ ] Test wallet connection (OP_WALLET and Unisat)
-- [ ] Verify QR code generates correctly
-- [ ] Test referral link generation
-- [ ] Test on mobile devices
-- [ ] Test on different browsers
-- [ ] Implement real payment monitoring
-- [ ] Set up backend database (recommended)
-- [ ] Configure analytics (Google Analytics, Plausible, etc.)
-- [ ] Set up error logging (Sentry, LogRocket, etc.)
-- [ ] Test payment flow end-to-end
-- [ ] Review all text content for typos
-- [ ] Verify social media links work
-- [ ] Test copy-to-clipboard functionality
-
-## 📊 Analytics Integration
-
-Add analytics to track conversions:
-
-```html
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
-</script>
-```
-
-Track events:
-```javascript
-// In app.js when important actions happen
-gtag('event', 'wallet_connected', {
-    'wallet_type': state.walletType
-});
-
-gtag('event', 'tier_selected', {
-    'tier_amount': state.selectedTier.laser
-});
-
-gtag('event', 'purchase_completed', {
-    'value': state.selectedTier.sats,
-    'currency': 'BTC'
-});
-```
-
-## 🛠️ Troubleshooting
-
-**Wallet won't connect:**
-- Ensure OP_WALLET or Unisat extension is installed
-- Check browser console for errors
-- Try refreshing the page
-
-**QR code not showing:**
-- Verify QRCode.js library is loading
-- Check browser console for errors
-- Ensure `btcAddress` is set correctly
-
-**Payments not detected:**
-- Implement actual blockchain monitoring (see Production Setup)
-- Check Bitcoin address is correct
-- Verify transactions have sufficient confirmations
-
-**Styling issues:**
-- Clear browser cache
-- Check CSS file is loading correctly
-- Verify no conflicting styles from browser extensions
-
-## 📱 Social Media Kit
-
-Promote your presale with these hashtags:
-- #LASER
-- #LaserRayUntil100K
-- #OpNet
-- #BitcoinL1
-- #OP20
-- #SlowFi
-- #BTCfi
-
-Example tweets:
-```
-🎯 $LASER presale is LIVE!
-
-The first meme token with actual vision on Bitcoin L1.
-
-✅ No bridges
-✅ No wrapped tokens
-✅ Pure OP20 on OpNet
-
-Join 733+ early visionaries.
-
-👁️‍🗨️ [YOUR PRESALE LINK]
-
-#LaserRayUntil100K
-```
-
-## 📄 License
-
-This is a template for your token presale. Customize and use as you wish.
-
-**Disclaimer**: This is not financial advice. Cryptocurrency investments are risky. Users should DYOR (Do Your Own Research).
-
-## 🤝 Support
-
-For issues or questions:
-1. Check this README first
-2. Review browser console for errors
-3. Test on different browsers/devices
-4. Verify wallet extensions are up to date
-
-## 🚀 Future Enhancements
-
-Consider adding:
-- Email notifications for payments
-- Multi-language support
-- Dark/light mode toggle
-- Admin dashboard for managing presale
-- Whitelist/KYC integration
-- Vesting schedule display
-- Token claim interface (post-presale)
-- Community leaderboard
-- Live transaction feed
+**Result: Production-ready in <30KB!**
 
 ---
 
-**Built with 👁️ for the Bitcoin community**
-
-*Remember: We don't chase pumps. We lock onto targets.* ⚡
-
-#LaserRayUntil100K
+Built on OpNet ⚡ Bitcoin L1  
+#LaserRayUntil100K 👁️‍🗨️
