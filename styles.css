@@ -1450,13 +1450,36 @@ html {
     scroll-behavior: smooth;
 }
 
-/* OpNet Logo Transparent */
+/* OpNet Logo - Bigger & More Visible */
 .opnet-badge {
-    height: 30px;
-    margin-left: 15px;
-    opacity: 0.85;
+    height: 50px;
+    margin-left: 20px;
+    opacity: 1;
     transition: all 0.3s;
-    mix-blend-mode: screen; /* Helps with transparency */
+    filter: drop-shadow(0 2px 8px rgba(255, 140, 0, 0.3));
+}
+
+.opnet-badge:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 12px rgba(255, 140, 0, 0.5));
+}
+
+/* Viral Slogan Below Logo */
+.viral-slogan {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--neon-green);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 /* Cleaner Logo Layout */
@@ -1834,13 +1857,13 @@ body, .story-block p, .manifesto-text {
 
 .template-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
 
 .template-item {
     background: rgba(0, 255, 157, 0.1);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     border: 2px solid transparent;
     text-align: center;
@@ -1851,17 +1874,33 @@ body, .story-block p, .manifesto-text {
 .template-item:hover {
     border-color: var(--neon-green);
     transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 255, 157, 0.3);
 }
 
 .template-thumb {
-    font-size: 48px;
     margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.template-svg {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .template-item span {
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Responsive Templates */
+@media (max-width: 768px) {
+    .template-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .meme-preview-area {

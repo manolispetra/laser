@@ -715,31 +715,47 @@ const BTC_PRICE_USD = 67000;
 function updateUI() {
     // Wallet connection state
     if (state.walletConnected) {
-        elements.connectWallet.innerHTML = '<span class="wallet-icon">👁️‍🗨️</span><span class="wallet-text">CONNECTED</span>';
-        elements.connectWallet.style.background = 'rgba(0, 255, 157, 0.2)';
-        elements.connectWallet.style.color = 'var(--neon-green)';
-        
         document.getElementById('walletDisconnected').style.display = 'none';
         document.getElementById('walletConnected').style.display = 'block';
         
-        document.getElementById('walletAddressShort').textContent = formatAddress(state.walletAddress);
-        document.getElementById('balanceSats').textContent = `${state.userBalance.toLocaleString()} sats`;
+        // Update address
+        const addrElement = document.getElementById('walletAddressShort');
+        if (addrElement) {
+            addrElement.textContent = formatAddress(state.walletAddress);
+        }
         
-        // Calculate USD value
-        const btcValue = state.userBalance / 100000000; // Convert sats to BTC
-        const usdValue = btcValue * BTC_PRICE_USD;
-        document.getElementById('balanceUsd').textContent = `$${usdValue.toFixed(2)}`;
+        // Update sats balance
+        const satsElement = document.getElementById('balanceSats');
+        if (satsElement) {
+            satsElement.textContent = `${state.userBalance.toLocaleString()} sats`;
+        }
         
-        document.getElementById('userReferralLink').value = generateReferralLink();
-        document.getElementById('referralShare').style.display = 'block';
+        // Calculate and update USD value
+        const usdElement = document.getElementById('balanceUsd');
+        if (usdElement) {
+            const btcValue = state.userBalance / 100000000; // Convert sats to BTC
+            const usdValue = btcValue * BTC_PRICE_USD;
+            usdElement.textContent = `$${usdValue.toFixed(2)}`;
+        }
+        
+        // Generate referral link
+        const refElement = document.getElementById('userReferralLink');
+        if (refElement) {
+            refElement.value = generateReferralLink();
+        }
+        
+        const refShareElement = document.getElementById('referralShare');
+        if (refShareElement) {
+            refShareElement.style.display = 'block';
+        }
     } else {
-        elements.connectWallet.innerHTML = '<span class="wallet-icon">👁️‍🗨️</span><span class="wallet-text">CONNECT WALLET</span>';
-        elements.connectWallet.style.background = '';
-        elements.connectWallet.style.color = '';
-        
         document.getElementById('walletDisconnected').style.display = 'block';
         document.getElementById('walletConnected').style.display = 'none';
-        document.getElementById('referralShare').style.display = 'none';
+        
+        const refShareElement = document.getElementById('referralShare');
+        if (refShareElement) {
+            refShareElement.style.display = 'none';
+        }
     }
 
     // Update progress
@@ -834,18 +850,40 @@ function loadImageFile(file) {
 }
 
 function useTemplate(template) {
-    // Create colored placeholder for template
+    // Create colored backgrounds with proper themes
     memeImage = new Image();
     memeImage.onload = () => drawMemeCanvas();
     
-    const colors = {
-        saylor: '#4169E1',
-        musk: '#FF4500',
-        hodl: '#FFD700'
+    const templates = {
+        'btc-maxi': {
+            bg: '#F7931A',
+            text: '₿',
+            fontSize: '200px',
+            color: '#fff'
+        },
+        'diamond-hands': {
+            bg: '#00ff9d',
+            text: '💎🙌',
+            fontSize: '120px',
+            color: '#000'
+        },
+        'to-the-moon': {
+            bg: '#1a1a1a',
+            text: '🚀🌕',
+            fontSize: '120px',
+            color: '#FFD700'
+        },
+        'laser-vision': {
+            bg: 'linear-gradient(135deg, #ff00aa 0%, #f00 100%)',
+            text: '👁️👁️',
+            fontSize: '120px',
+            color: '#fff'
+        }
     };
     
-    const color = colors[template] || '#333';
-    const svg = `data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Crect fill='${encodeURIComponent(color)}' width='600' height='600'/%3E%3Ctext x='300' y='300' text-anchor='middle' font-size='72' fill='white' font-weight='bold'%3E${template.toUpperCase()}%3C/text%3E%3C/svg%3E`;
+    const tpl = templates[template] || templates['btc-maxi'];
+    
+    const svg = `data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ff00aa;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23f00;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='${template === 'laser-vision' ? 'url(%23grad)' : encodeURIComponent(tpl.bg)}' width='600' height='600'/%3E%3Ctext x='300' y='350' text-anchor='middle' font-size='${tpl.fontSize}' fill='${encodeURIComponent(tpl.color)}' font-weight='bold'%3E${encodeURIComponent(tpl.text)}%3C/text%3E%3C/svg%3E`;
     
     memeImage.src = svg;
 }
