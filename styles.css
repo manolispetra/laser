@@ -1374,3 +1374,495 @@ body {
         flex-direction: column;
     }
 }
+
+/* ========================================
+   ENHANCED FEATURES - V2.5
+   ======================================== */
+
+/* Laser Eye Image Logo */
+.laser-eye-image {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--laser-red);
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.6);
+}
+
+.laser-eye-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: eyePulse 2s ease-in-out infinite;
+}
+
+@keyframes eyePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.laser-glow-effect {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.4), transparent);
+    animation: pulse 2s infinite;
+}
+
+/* OpNet Badge */
+.opnet-badge {
+    height: 35px;
+    margin-left: 20px;
+    opacity: 0.9;
+    transition: all 0.3s;
+}
+
+.opnet-badge:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Updated Logo Layout */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Viral Fonts */
+.logo-text, .hero-title, .section-title {
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+body, .story-block p, .manifesto-text {
+    font-family: 'Space Mono', monospace !important;
+}
+
+/* Wallet Info Box with Balance */
+.wallet-info-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0, 255, 157, 0.1);
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid var(--laser-yellow);
+}
+
+.wallet-balance {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.balance-sats {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--laser-yellow);
+}
+
+.balance-usd {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.wallet-address-short {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.btn-disconnect {
+    background: rgba(255, 69, 0, 0.2);
+    border: 1px solid var(--laser-red);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--laser-red);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-disconnect:hover {
+    background: rgba(255, 69, 0, 0.4);
+    transform: rotate(90deg);
+}
+
+/* Neon Green/Pink Aesthetic */
+:root {
+    --neon-green: #00ff9d;
+    --neon-pink: #ff00aa;
+}
+
+.hero-title, .section-title {
+    background: linear-gradient(135deg, var(--neon-green) 0%, var(--neon-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: neonGlow 3s ease-in-out infinite;
+}
+
+@keyframes neonGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px var(--neon-green));
+    }
+    50% {
+        filter: drop-shadow(0 0 40px var(--neon-pink));
+    }
+}
+
+/* Meme Generator */
+.meme-generator {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 60px;
+    font-size: 18px;
+}
+
+.meme-generator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.upload-zone {
+    border: 3px dashed var(--neon-green);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: rgba(0, 255, 157, 0.05);
+}
+
+.upload-zone:hover {
+    background: rgba(0, 255, 157, 0.1);
+    border-color: var(--neon-pink);
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    font-size: 64px;
+    color: var(--neon-green);
+    margin-bottom: 20px;
+}
+
+.upload-text {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.btn-upload {
+    background: linear-gradient(45deg, var(--neon-green), var(--neon-pink));
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    color: var(--dark-bg);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.template-selector {
+    margin-top: 40px;
+}
+
+.template-label {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.template-item {
+    background: rgba(0, 255, 157, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.template-item:hover {
+    border-color: var(--neon-green);
+    transform: translateY(-5px);
+}
+
+.template-thumb {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.template-item span {
+    display: block;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.meme-preview-area {
+    text-align: center;
+}
+
+#memeCanvas {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    border: 3px solid var(--neon-green);
+    background: #222;
+    margin-bottom: 30px;
+}
+
+.meme-controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.btn-meme {
+    background: linear-gradient(45deg, var(--neon-green), var(--laser-orange));
+    border: none;
+    padding: 15px 35px;
+    border-radius: 25px;
+    color: var(--dark-bg);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.btn-meme:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 255, 157, 0.4);
+}
+
+.btn-twitter {
+    background: linear-gradient(45deg, #1DA1F2, var(--neon-pink));
+}
+
+.meme-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Referral Program */
+.referral-program {
+    padding: 100px 0;
+    background: var(--dark-bg);
+}
+
+.referral-box {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    background: rgba(0, 255, 157, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--neon-green);
+}
+
+.referral-input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.referral-input-group input {
+    flex: 1;
+    background: rgba(0, 255, 157, 0.1);
+    border: 2px solid var(--neon-green);
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+}
+
+.btn-copy-ref {
+    background: var(--neon-green);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: var(--dark-bg);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.btn-copy-ref:hover {
+    background: var(--neon-pink);
+}
+
+.referral-bonus {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Leaderboard */
+.leaderboard {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255, 0, 170, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--neon-pink);
+}
+
+.leaderboard-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    color: var(--neon-pink);
+    margin-bottom: 30px;
+}
+
+.leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 0, 170, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.leaderboard-item:hover {
+    background: rgba(255, 0, 170, 0.2);
+    transform: translateX(10px);
+}
+
+.rank {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    color: var(--neon-pink);
+    min-width: 50px;
+    font-weight: 700;
+}
+
+.avatar {
+    font-size: 36px;
+}
+
+.referrer-info {
+    flex: 1;
+}
+
+.referrer-name {
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.referrer-count {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Social Icons in Footer */
+.footer-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 255, 157, 0.1);
+    border: 2px solid var(--neon-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-green);
+    font-size: 28px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background: rgba(0, 255, 157, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 157, 0.4);
+    border-color: var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+/* Responsive Updates */
+@media (max-width: 968px) {
+    .meme-generator-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wallet-info-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .wallet-balance {
+        align-items: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .laser-eye-image {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .opnet-badge {
+        height: 25px;
+        margin-left: 10px;
+    }
+    
+    .logo-text {
+        font-size: 36px;
+    }
+    
+    .meme-controls {
+        flex-direction: column;
+    }
+    
+    .referral-input-group {
+        flex-direction: column;
+    }
+    
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
